@@ -1,0 +1,38 @@
+.padreHome {
+    height: 100vh;
+    width: 100vw;
+
+    background-image: url(https://imgur.com/BrUMekH.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+
+    .luImg {
+        width: 100%;
+        height: 52%;
+        background: url(https://imgur.com/zC8SlW4.png) no-repeat top;
+    }
+
+    .headerHome {
+        width: 100%;
+        height: 10%;
+        
+        .enlacesBotonHome {
+            width: 5em;
+            height: 2em;
+        }
+    }
+
+    .divBotonHome {
+        display: flex;
+        justify-content: center;
+
+        .botonHome {
+            width: 10em;
+            height: 2em;
+            font-size: 3em;
+        }
+    }
+}
