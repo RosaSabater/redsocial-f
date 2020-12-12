@@ -24,9 +24,7 @@ function App() {
             </Route>
 
             <Route path="/homepage" exact>
-                <Homepage>
-                    <AccesosDirectos />
-                </Homepage>
+                <Homepage />
             </Route>
 
 
