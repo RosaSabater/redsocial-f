@@ -1,5 +1,6 @@
 .columnaAccesos {
-    width: 20vw;
+    width: 13vw;
+    min-width: 8vw;
     height: 100vh;
     background-color: rgba(128, 128, 128, 0.473);
 
@@ -16,18 +17,26 @@
         justify-content: space-evenly;
         align-items: center;
         flex-direction: column;
-    }
 
-    .boxAvatar {
-        width: 100%;
-        display: flex;
-        // flex-direction: row;
-        font-size: 0.8em;
-
-        .imagenAvatar {
-            height: 2em;
-            border-radius: 2em;
-            padding: 0.5em;
+        .botonAccesos {
+            -webkit-box-shadow: 3px 3px 71px -5px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 3px 3px 71px -5px rgba(0, 0, 0, 0.75);
+            box-shadow: 3px 3px 71px -5px rgba(0, 0, 0, 0.75);
+            color: black;
+            background-color: white;
+            width: 10em;
+            border: none;
+            border-radius: 1em;
+            // transition: all 0.5s ease-in-out;
+        }
+        .botonAccesos:hover {
+            // background-color: grey;
+            -webkit-box-shadow: 3px 3px 58px 7px rgba(0,0,0,0.75);
+            -moz-box-shadow: 3px 3px 58px 7px rgba(0,0,0,0.75);
+            box-shadow: 3px 3px 58px 7px rgba(0,0,0,0.75);
+            transform: scale(1.1);
         }
     }
+
+
 }

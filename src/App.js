@@ -1,11 +1,11 @@
 import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
 import React from 'react'
+import 'antd/dist/antd.css';
 import Login from './Containers/Login/Login';
 import Register from './Containers/Register/Register';
 import Home from './Containers/Home/Home';
 import Homepage from './Containers/Homepage/Homepage';
-import AccesosDirectos from './Components/AccesosDirectos/AccesosDirectos';
 
 function App() {
     return (
