@@ -1,0 +1,21 @@
+.padrePostear {
+    width: 43.5em;
+
+    .cabeceraPostear {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 0.8em;
+
+        .nickPostear {
+            font-weight: bolder;
+        }
+
+        .imgAvatarPostear {
+            height: 3em;
+            width: 3em;
+            border-radius: 1em;
+            margin-right: 0.6em;
+        }
+    }
+}

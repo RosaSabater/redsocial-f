@@ -5,7 +5,7 @@ import axios from 'axios';
 import { LOGOUT } from '../../Redux/types';
 import './AccesosDirectos.scss';
 import SubMenu from 'antd/lib/menu/SubMenu';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 export default function AccesosDirectos() {
 
@@ -21,7 +21,6 @@ export default function AccesosDirectos() {
             };
 
             dispatch({ type: LOGOUT });
-            localStorage.clear();
             
             history.push('/');
 
@@ -39,10 +38,7 @@ export default function AccesosDirectos() {
                 headers: { Authorization: usuario?.token }
             };
 
-            dispatch({ type: LOGOUT });
-            localStorage.clear();
-            
-            history.push('/');
+            logout();
 
             await axios.delete(`${process.env.REACT_APP_APIURL}/delete`, header);
         } catch (error) {
@@ -53,21 +49,10 @@ export default function AccesosDirectos() {
     return (
         <div className="columnaAccesos">
             <div className="boxBotonesAccesos">
-                <Button className="botonAccesos" type="primary" style={{
-                    background: "lightblue"
-                }}>
-                    Postear
-                </Button>
 
-                <Button className="botonAccesos" type="primary">
+                <Link to="/homepage"><Button className="botonAccesos" type="primary">
                     Inicio
-                </Button>
-
-
-                <Button className="botonAccesos" type="primary" >
-                    Mundo
-                </Button>
-
+                </Button></Link>
 
                 <Button className="botonAccesos" type="primary">
                     Seguidos
@@ -79,12 +64,12 @@ export default function AccesosDirectos() {
                 </Button>
 
 
-                <Button className="botonAccesos" type="primary">
+                <Link to="/perfil"><Button className="botonAccesos" type="primary">
                     Perfil
-                </Button>
+                </Button></Link>
 
-                <Menu className="botonAccesos" mode="vertical">
-                    <SubMenu key="sub4" title="Opciones">
+                <Menu className="botonAccesos" mode="horizontal">
+                    <SubMenu key="sub4" title="Opciones ~>">
                         <Menu.Item onClick={logout} key="9">Cerrar sesión</Menu.Item>
                         <Menu.Item onClick={baja} key="10">Eliminar cuenta</Menu.Item>
                     </SubMenu>
@@ -111,8 +96,8 @@ export default function AccesosDirectos() {
                         }}></img>
 
                         <div>
-                            <p>{usuario.nick}</p>
-                            <p>@{usuario.nombreCuenta}</p>
+                            <p>{usuario?.nick}</p>
+                            <p>@{usuario?.nombreCuenta}</p>
                         </div>
                     </div>
 

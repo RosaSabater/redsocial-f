@@ -1,0 +1,78 @@
+.padrePost {
+    width: 43.5em;
+    // height: 100%;
+    background-color: rgba(128, 128, 128, 0.473);
+    display: flex;
+    // justify-content: center;
+    flex-direction: column;
+    // align-items: center;
+    padding: 0.6em;
+
+
+
+    .boxPost {
+        // width: 50%;
+        display: flex;
+        // align-items: center;
+        flex-direction: column;
+        font-size: 1.3em;
+        border: 1px solid black;
+        background-color: rgba(255, 255, 255, 0.623);
+        margin: 0.5em;
+        padding: 0.6em;
+
+        .cabeceraPost {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            font-size: 0.8em;
+
+            .nick {
+                font-weight: bolder;
+            }
+        }
+
+        .imgAvatar {
+            height: 3em;
+            width: 3em;
+            border-radius: 1em;
+            margin-right: 0.6em;
+        }
+
+        .mensajePost {
+            display: flex;
+            flex-direction: column;
+            margin: 0.5em;
+            line-height: 1em;
+        }
+    }
+}
+.padrePost::-webkit-scrollbar {
+    width: 8px;     /* Tamaño del scroll en vertical */
+    height: 8px;    /* Tamaño del scroll en horizontal */
+    // display: none;  /* Ocultar scroll */
+}
+/* Ponemos un color de fondo y redondeamos las esquinas del thumb */
+.padrePost::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+/* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+.padrePost::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+/* Cambiamos el fondo cuando esté en active */
+.padrePost::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+}
+/* Ponemos un color de fondo y redondeamos las esquinas del track */
+.padrePost::-webkit-scrollbar-track {
+    background: #e1e1e1;
+    border-radius: 4px;
+}
+/* Cambiamos el fondo cuando esté en active o hover */
+.padrePost::-webkit-scrollbar-track:hover,
+.padrePost::-webkit-scrollbar-track:active {
+  background: #d4d4d4;
+}

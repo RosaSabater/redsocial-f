@@ -5,7 +5,9 @@ import 'antd/dist/antd.css';
 import Login from './Containers/Login/Login';
 import Register from './Containers/Register/Register';
 import Home from './Containers/Home/Home';
-import Homepage from './Containers/Homepage/Homepage';
+import Layout from './Components/Layout/Layout';
+import Perfil from './Components/Perfil/Perfil';
+import Posts from './Components/Posts/Posts';
 
 function App() {
     return (
@@ -24,10 +26,16 @@ function App() {
             </Route>
 
             <Route path="/homepage" exact>
-                <Homepage />
+                <Layout>
+                    <Posts />
+                </Layout>
             </Route>
 
-
+            <Route path="/perfil" exact>
+                <Layout muestraCabecera={false}>
+                    <Perfil />
+                </Layout>
+            </Route>
 
         </BrowserRouter>
 

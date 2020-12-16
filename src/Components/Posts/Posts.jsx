@@ -1,14 +1,45 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import './Post.scss';
+import React, { createElement, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { LikeOutlined, LikeFilled, DeleteOutlined } from '@ant-design/icons';
+import { Tooltip } from 'antd';
+import moment from 'moment';
+import { DELETE_POST, SET_POSTS } from '../../Redux/types';
+import ListaPosts from '../ListaPost/ListaPosts';
 
 
 export default function Posts() {
 
-
-    const [posts, setPosts] = useState([]);
+    const dispatch = useDispatch();
     const usuario = useSelector(state => state.user)
+    const post = useSelector(state => state.post)
+    const [likes, setLikes] = useState(0);
+    const [action, setAction] = useState(null);
+
+    const like = () => {
+        setLikes(1);
+        setAction('liked');
+    };
+
+    const deletePost = async (_id) => {
+        try {
+            const header = {
+                headers: { Authorization: usuario.token }
+            };
+
+            let body = {
+                _id: _id
+            }
+           await axios.post(`${process.env.REACT_APP_APIURL}/borrarPost`, body, header);
+
+            dispatch({
+                type: DELETE_POST, payload: _id
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    };
+
 
     try {
         // event.preventDefault();
@@ -23,7 +54,7 @@ export default function Posts() {
 
                     let respuesta = await axios.post(`${process.env.REACT_APP_APIURL}/getPosts`, null, header);
 
-                    setPosts(respuesta.data);
+                    dispatch({ type: SET_POSTS, payload: respuesta.data })
 
                 } catch (error) {
                     console.log(error);
@@ -32,6 +63,8 @@ export default function Posts() {
             fnc();
         }, []);
 
+
+
     } catch (error) {
         console.log(error)
     }
@@ -39,23 +72,7 @@ export default function Posts() {
 
     return (
         <div className="padrePost">
-
-            {posts?.map(post => {
-
-                return <div className="boxPost" >
-                    <div className="cabeceraPost">
-                        <img className="imgAvatar" src={usuario.avatar}></img>
-                        <div>
-                        <div>{usuario.nick}</div>
-                        <div>@{usuario.nombreCuenta}</div>
-                        </div>
-                    </div>
-                    <div className="mensajePost">{post.mensaje}</div>
-                </div>
-            })}
-
+            <ListaPosts arrayPosts={post}/>
         </div>
     )
 };
-
-
