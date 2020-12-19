@@ -24,7 +24,7 @@ export default function AccesosDirectos() {
             
             history.push('/');
 
-            await axios.post(`${process.env.REACT_APP_APIURL}/logout`, header);
+            await axios.post(`${process.env.REACT_APP_APIURL}/logout`, null, header);
 
 
         } catch (error) {
@@ -38,13 +38,14 @@ export default function AccesosDirectos() {
                 headers: { Authorization: usuario?.token }
             };
 
-            logout();
+            await logout();
 
             await axios.delete(`${process.env.REACT_APP_APIURL}/delete`, header);
         } catch (error) {
             console.error(error);
         }
     }
+
 
     return (
         <div className="columnaAccesos">
@@ -97,7 +98,7 @@ export default function AccesosDirectos() {
 
                         <div>
                             <p>{usuario?.nick}</p>
-                            <p>@{usuario?.nombreCuenta}</p>
+                            <Link to= {`/perfil/${usuario?.nombreCuenta}`}>@{usuario?.nombreCuenta}</Link>
                         </div>
                     </div>
 

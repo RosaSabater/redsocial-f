@@ -6,9 +6,10 @@ import { LikeOutlined, LikeFilled, DeleteOutlined } from '@ant-design/icons';
 import { Tooltip } from 'antd';
 import moment from 'moment';
 import { DELETE_POST, SET_POSTS } from '../../Redux/types';
+import { Link } from 'react-router-dom';
 
 
-export default function ListaPosts({arrayPosts= []}) {
+export default function ListaPosts({ arrayPosts = [] }) {
 
     const dispatch = useDispatch();
     const usuario = useSelector(state => state.user)
@@ -29,7 +30,7 @@ export default function ListaPosts({arrayPosts= []}) {
             let body = {
                 _id: _id
             }
-           await axios.post(`${process.env.REACT_APP_APIURL}/borrarPost`, body, header);
+            await axios.post(`${process.env.REACT_APP_APIURL}/borrarPost`, body, header);
 
             dispatch({
                 type: DELETE_POST, payload: _id
@@ -51,7 +52,7 @@ export default function ListaPosts({arrayPosts= []}) {
                         <img className="imgAvatar" src={post?.autor?.avatar}></img>
                         <div>
                             <div className="nick">{post?.autor?.nick}</div>
-                            <div className="nCuenta">@{post?.autor?.nombreCuenta}</div>
+                            <Link to={`/perfil/${post?.autor?.nombreCuenta}`} className="nCuenta">@{post?.autor?.nombreCuenta}</Link>
                         </div>
                     </div>
                     <div className="mensajePost">{post?.mensaje}</div>

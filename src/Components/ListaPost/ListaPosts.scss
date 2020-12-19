@@ -1,7 +1,7 @@
 .padrePost {
     width: 43.5em;
     // height: 100%;
-    background-color: rgba(128, 128, 128, 0.473);
+    // background-color: rgba(128, 128, 128, 0.473);
     display: flex;
     // justify-content: center;
     flex-direction: column;
@@ -17,7 +17,7 @@
         flex-direction: column;
         font-size: 1.3em;
         border: 1px solid black;
-        background-color: rgba(255, 255, 255, 0.623);
+        background-color: rgba(255, 255, 255, 0.76);
         margin: 0.5em;
         padding: 0.6em;
 
@@ -45,6 +45,10 @@
             margin: 0.5em;
             line-height: 1em;
         }
+
+        // .nCuenta {
+        //     color: rgb(70, 70, 70);
+        // }
     }
 }
 .padrePost::-webkit-scrollbar {

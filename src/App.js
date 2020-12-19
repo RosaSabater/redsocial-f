@@ -31,7 +31,7 @@ function App() {
                 </Layout>
             </Route>
 
-            <Route path="/perfil" exact>
+            <Route path="/perfil">
                 <Layout muestraCabecera={false}>
                     <Perfil />
                 </Layout>
