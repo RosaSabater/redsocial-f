@@ -10,21 +10,14 @@ export default function Home() {
     const pulsaEmpezar = async (event) => {
 
         try {
-            // event.preventDefault();
-
             history.push('/login')
-
-
         } catch (error) {
             console.log(error)
         }
-
-
     }
 
     return (
         <>
-
             <div className="padreHome">
 
                 <div className="headerHome">
@@ -39,7 +32,6 @@ export default function Home() {
                     <button onClick={pulsaEmpezar} className="botonHome">¡Acceder!</button>
                 </div>
             </div>
-
         </>
     )
 };

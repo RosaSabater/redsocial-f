@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import AccesosDirectos from '../../Components/AccesosDirectos/AccesosDirectos';
-import Perfil from '../../Components/Perfil/Perfil';
 import Postear from '../../Components/Postear/Postear';
-import Posts from '../../Components/Posts/Posts';
+import Noticias from '../../Components/Noticias/Noticias';
 import './Layout.scss'
 
 const Layout = ({children, muestraCabecera = true}) => {

@@ -42,8 +42,6 @@ export default function Posts() {
 
 
     try {
-        // event.preventDefault();
-
         useEffect(() => {
 
             const fnc = async () => {
