@@ -6,6 +6,7 @@ import { LOGOUT } from '../../Redux/types';
 import './AccesosDirectos.scss';
 import SubMenu from 'antd/lib/menu/SubMenu';
 import { Link, useHistory } from 'react-router-dom';
+import { RightOutlined } from '@ant-design/icons';
 
 export default function AccesosDirectos() {
 
@@ -60,9 +61,9 @@ export default function AccesosDirectos() {
                 </Button>
 
 
-                <Button className="botonAccesos" type="primary">
+                {/* <Button className="botonAccesos" type="primary">
                     Mensajes
-                </Button>
+                </Button> */}
 
 
                 <Link to="/perfil"><Button className="botonAccesos" type="primary">
@@ -70,7 +71,7 @@ export default function AccesosDirectos() {
                 </Button></Link>
 
                 <Menu className="botonAccesos" mode="horizontal">
-                    <SubMenu key="sub4" title="Opciones ~>">
+                    <SubMenu key="sub4" title={<div style={{display:"flex", alignItems:"center"}}>Opciones &nbsp; <RightOutlined /></div>}>
                         <Menu.Item onClick={logout} key="9">Cerrar sesión</Menu.Item>
                         <Menu.Item onClick={baja} key="10">Eliminar cuenta</Menu.Item>
                     </SubMenu>

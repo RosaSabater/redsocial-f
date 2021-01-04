@@ -13,9 +13,10 @@ export default function Postear() {
     const dispatch = useDispatch();
     const { Panel } = Collapse;
     const { TextArea } = Input;
+    const [activeKey, setActiveKey] = useState(["0"])
 
     function callback(key) {
-        console.log(key);
+        setActiveKey(key)
     }
 
     const Publicar = async (ev) => {
@@ -38,6 +39,8 @@ export default function Postear() {
                 avatar: usuario.avatar
             }
 
+            setActiveKey(["0"]);
+            setMensaje("");
             dispatch({ type: ADD_POST, payload: objetoPost })
 
         } catch (error) {
@@ -48,7 +51,7 @@ export default function Postear() {
 
     return (
         <>
-            <Collapse className="padrePostear" defaultActiveKey={['0']} onChange={callback}>
+            <Collapse className="padrePostear" activeKey={activeKey} onChange={callback}>
                 <div className="cabeceraPostear">
                     <img className="imgAvatarPostear" src={usuario?.avatar}></img>
                     <div>
@@ -57,7 +60,7 @@ export default function Postear() {
                     </div>
                 </div>
                 <Panel header="Postear" key="1">
-                    <TextArea onChange={ev => setMensaje(ev.target.value)} rows={3} />
+                    <TextArea onChange={ev => setMensaje(ev.target.value)} value={mensaje} rows={3} />
                     <Button onClick={Publicar} style={{ backgroundColor: "#687BB1", border: "none" }} type="primary" block>
                         Postear
                 </Button>

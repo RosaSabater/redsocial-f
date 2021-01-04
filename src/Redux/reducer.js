@@ -28,7 +28,7 @@ const reducer = (state=initialState, action) => {
 
         case ADD_POST:
             let nuevoArrayAddPost = [...state.post];
-            nuevoArrayAddPost.push(action.payload);
+            nuevoArrayAddPost.unshift(action.payload);
             return{
                 ...state,
                 post: nuevoArrayAddPost

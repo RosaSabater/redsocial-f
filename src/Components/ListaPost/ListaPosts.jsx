@@ -100,13 +100,13 @@ export default function ListaPosts({ arrayPosts = [] }) {
                     <span style={{ fontSize: "0.7em" }}>{moment(post?.fechaCreacion).fromNow()}</span>
 
                     <span>
-                        <Tooltip key="comment-basic-like" title="Like">
+                        <Tooltip title="Like">
                             <span className="cp" onClick={() => pulsaLike(!leHeDadoLike, post?._id)}>
                                 {leHeDadoLike ? <LikeFilled /> : <LikeOutlined />}
                             </span>
                         </Tooltip>
 
-                        <Tooltip key="comment-basic-like" title="Personas que han dado like">
+                        <Tooltip  title="Personas que han dado like">
                             <span className="cp" onClick={() => setContenidoModal(post?.usuariosLike)} style={{ marginLeft: "0.5em" }}>{post?.usuariosLike?.length} Likes</span>
                         </Tooltip>
 
