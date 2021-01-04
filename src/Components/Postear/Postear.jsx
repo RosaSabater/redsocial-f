@@ -11,7 +11,6 @@ export default function Postear() {
     const usuario = useSelector(state => state.user);
     const [mensaje, setMensaje] = useState("");
     const dispatch = useDispatch();
-    const history = useHistory();
     const { Panel } = Collapse;
     const { TextArea } = Input;
 

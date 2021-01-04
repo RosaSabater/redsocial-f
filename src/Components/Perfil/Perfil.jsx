@@ -1,9 +1,9 @@
-import { DeleteOutlined, EditOutlined, LikeFilled, LikeOutlined } from '@ant-design/icons';
+import { EditOutlined, LikeFilled, LikeOutlined } from '@ant-design/icons';
 import { Button, Tooltip } from 'antd';
 import axios from 'axios';
 import React, { createElement, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useHistory, withRouter } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import ListaPosts from '../ListaPost/ListaPosts';
 import './Perfil.scss';
 
@@ -38,22 +38,18 @@ const Perfil = () => {
 
     
     useEffect(() => {
-        console.log('escucho')
         
         const unlisten = history.listen((location, action) => {
-            console.log(location.pathname)
             setLocalizacion(location.pathname);
         })
         
         return function cleanup(){
-            console.log('dejo de escuchar')
             unlisten()
         }
 
-    }, [])
+    }, []);
 
     useEffect(() => {
-        console.log('me lanzo', localizacion)
 
         const fnc = async () => {
             try {
@@ -87,7 +83,7 @@ const Perfil = () => {
                         // let respuesta = await axios.post(`${process.env.REACT_APP_APIURL}/getPosts`, {nombreCuentaAutor: nombreCuenta}, header);
                         // let respuestaPerfil =  await axios.post(`${process.env.REACT_APP_APIURL}/perfil`, {nombreCuenta}, header);
 
-                        // devuelve el resultado de las dos promesas en paralelo
+                        // devuelve el resultado de las tres promesas en paralelo
                         let respuestaPromesas = await Promise.all([
                             axios.post(`${process.env.REACT_APP_APIURL}/getPosts`, { nombreCuentaAutor: nombreCuenta }, header),
                             axios.post(`${process.env.REACT_APP_APIURL}/perfil`, { nombreCuenta }, header),
@@ -139,6 +135,9 @@ const Perfil = () => {
         await axios.post(`${process.env.REACT_APP_APIURL}/quitarFollow`, { destino: datosUsuario?.nombreCuenta }, header)
     };
 
+    if (!datosUsuario) {
+        return <p className="padrePerfil">Ese usuario no existe.</p>
+    }
     return (
         <>
 

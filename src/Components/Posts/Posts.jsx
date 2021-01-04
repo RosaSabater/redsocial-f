@@ -1,9 +1,6 @@
 import axios from 'axios';
-import React, { createElement, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { LikeOutlined, LikeFilled, DeleteOutlined } from '@ant-design/icons';
-import { Tooltip } from 'antd';
-import moment from 'moment';
 import { DELETE_POST, SET_POSTS } from '../../Redux/types';
 import ListaPosts from '../ListaPost/ListaPosts';
 

@@ -107,7 +107,7 @@ export default function ListaPosts({ arrayPosts = [] }) {
                         </Tooltip>
 
                         <Tooltip key="comment-basic-like" title="Personas que han dado like">
-                            <span className="cp" onClick={() => setContenidoModal(post?.usuariosLike)} style={{ marginLeft: "0.5em" }}>{post?.usuariosLike.length} Likes</span>
+                            <span className="cp" onClick={() => setContenidoModal(post?.usuariosLike)} style={{ marginLeft: "0.5em" }}>{post?.usuariosLike?.length} Likes</span>
                         </Tooltip>
 
                         {/* <span key="comment-basic-reply-to"> Responder</span> */}
@@ -137,7 +137,6 @@ export default function ListaPosts({ arrayPosts = [] }) {
                             content={
                                 <p>{usuarioLike?.nombreCuenta}</p>
                             }
-
                         />
                         <Divider style={{margin: 0}} />
                     </>
