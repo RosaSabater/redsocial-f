@@ -53,7 +53,8 @@ export default function Postear() {
         <>
             <Collapse className="padrePostear" activeKey={activeKey} onChange={callback}>
                 <div className="cabeceraPostear">
-                    <img className="imgAvatarPostear" src={usuario?.avatar}></img>
+                    <img className="imgAvatarPostear" src={!usuario?.avatar ? '/Images/NoAvatar.gif' : usuario?.avatar} alt="avatar"></img>
+
                     <div>
                         <div className="nickPostear">{usuario?.nick}</div>
                         <div className="nCuentaPostear">@{usuario?.nombreCuenta}</div>

@@ -55,7 +55,7 @@ export default function Buscador() {
                         author={resultado?.nick}
                         avatar={
                             <Avatar
-                                src={resultado?.avatar}
+                                src={!resultado?.avatar ? '/Images/NoAvatar.gif' : resultado?.avatar}
                             />
                         }
                         content={

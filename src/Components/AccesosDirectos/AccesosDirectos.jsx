@@ -83,17 +83,18 @@ export default function AccesosDirectos() {
                 <Card style={{
                     width: "15em",
                     background: "none",
-                    border: "none",
                     textAlign: "center",
-                    color: "white"
+                    backgroundColor: "rgba(255, 255, 255, 0.76)",
+                    borderRadius: "5em"
                 }}>
                     <div style={{
                         display: "flex"
                     }}>
                         <img src={usuario?.avatar} style={{
-                            width: "5em",
+                            width: "4em",
                             height: "4em",
-                            borderRadius: "1em"
+                            borderRadius: "5em",
+                            marginRight: "1em"
 
                         }}></img>
 

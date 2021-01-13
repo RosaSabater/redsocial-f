@@ -143,7 +143,7 @@ const Perfil = () => {
 
             <div className="padrePerfil">
 
-                <img className="avatarPerfil" src={datosUsuario?.avatar}></img>
+                <img className="avatarPerfil" src={!datosUsuario?.avatar ? '/Images/NoAvatar.gif' : datosUsuario?.avatar} alt="avatar"></img>
 
                 <div className="boxInfoPerfil">
                     <div>{datosUsuario?.nick}</div>
