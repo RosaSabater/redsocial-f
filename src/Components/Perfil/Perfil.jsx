@@ -36,14 +36,14 @@ const Perfil = () => {
     let pathname = history.location.pathname.split('/');
     let nombreCuenta = pathname[2];
 
-    
+
     useEffect(() => {
-        
+
         const unlisten = history.listen((location, action) => {
             setLocalizacion(location.pathname);
         })
-        
-        return function cleanup(){
+
+        return function cleanup() {
             unlisten()
         }
 
@@ -182,9 +182,9 @@ const Perfil = () => {
             </div>
 
             <div className="padrePost" style={{
-                    overflowY: "scroll",
-                    overflowX: "hidden",
-                    maxHeight: "70vh"
+                overflowY: "scroll",
+                overflowX: "hidden",
+                maxHeight: "70vh"
             }}>
                 <ListaPosts arrayPosts={misPosts} />
             </div>

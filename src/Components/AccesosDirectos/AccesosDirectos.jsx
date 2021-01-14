@@ -22,7 +22,7 @@ export default function AccesosDirectos() {
             };
 
             dispatch({ type: LOGOUT });
-            
+
             history.push('/');
 
             await axios.post(`${process.env.REACT_APP_APIURL}/logout`, null, header);
@@ -56,9 +56,9 @@ export default function AccesosDirectos() {
                     Inicio
                 </Button></Link>
 
-                <Button className="botonAccesos" type="primary">
+                <Link to="/seguidos"><Button className="botonAccesos" type="primary">
                     Seguidos
-                </Button>
+                </Button></Link>
 
 
                 {/* <Button className="botonAccesos" type="primary">
@@ -71,7 +71,7 @@ export default function AccesosDirectos() {
                 </Button></Link>
 
                 <Menu className="botonAccesos" mode="horizontal">
-                    <SubMenu key="sub4" title={<div style={{display:"flex", alignItems:"center"}}>Opciones &nbsp; <RightOutlined /></div>}>
+                    <SubMenu key="sub4" title={<div style={{ display: "flex", alignItems: "center" }}>Opciones &nbsp; <RightOutlined /></div>}>
                         <Menu.Item onClick={logout} key="9">Cerrar sesión</Menu.Item>
                         <Menu.Item onClick={baja} key="10">Eliminar cuenta</Menu.Item>
                     </SubMenu>
@@ -90,17 +90,18 @@ export default function AccesosDirectos() {
                     <div style={{
                         display: "flex"
                     }}>
-                        <img src={usuario?.avatar} style={{
-                            width: "4em",
-                            height: "4em",
-                            borderRadius: "5em",
-                            marginRight: "1em"
+                        <img src={!usuario?.avatar ? '/Images/NoAvatar.gif' : usuario?.avatar}
+                            style={{
+                                width: "4em",
+                                height: "4em",
+                                borderRadius: "5em",
+                                marginRight: "1em"
 
-                        }}></img>
+                            }}></img>
 
                         <div>
                             <p>{usuario?.nick}</p>
-                            <Link to= {`/perfil/${usuario?.nombreCuenta}`}>@{usuario?.nombreCuenta}</Link>
+                            <Link to={`/perfil/${usuario?.nombreCuenta}`}>@{usuario?.nombreCuenta}</Link>
                         </div>
                     </div>
 

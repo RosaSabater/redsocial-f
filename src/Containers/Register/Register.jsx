@@ -52,7 +52,7 @@ export default function Register() {
             <div className="backgroundLogin">
                 <div className="login">
 
-                    <input onChange={ev => setNick(ev.target.value)}  placeholder="Nick de usuario"></input>
+                    <input onChange={ev => setNick(ev.target.value)} placeholder="Nick de usuario"></input>
                     <input onChange={ev => setNombreCuenta(ev.target.value)} placeholder="Nombre de cuenta"></input>
                     <input onChange={ev => setEmail(ev.target.value)} type="email" placeholder="Email"></input>
                     <input onChange={ev => setPassword(ev.target.value)} type="password" placeholder="Contraseña"></input>

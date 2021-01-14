@@ -40,8 +40,8 @@ export default function Buscador() {
                 placeholder="Cuenta/nick"
                 allowClear
                 onSearch={onSearch}
-                onChange={(ev)=>{
-                    if (ev.target.value === ""){
+                onChange={(ev) => {
+                    if (ev.target.value === "") {
                         setResultados([])
                     }
                 }}
@@ -62,7 +62,7 @@ export default function Buscador() {
                             <Link to={`/perfil/${resultado?.nombreCuenta}`} className="nCuenta">@{resultado?.nombreCuenta}</Link>
                         }
 
-                        style={{padding:"0.5em"}}
+                        style={{ padding: "0.5em" }}
                     />
                 )}
             </div>

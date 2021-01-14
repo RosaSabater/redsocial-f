@@ -8,6 +8,7 @@ import Home from './Containers/Home/Home';
 import Layout from './Components/Layout/Layout';
 import Perfil from './Components/Perfil/Perfil';
 import Posts from './Components/Posts/Posts';
+import Seguidos from './Components/Seguidos/Seguidos';
 
 function App() {
     return (
@@ -34,6 +35,12 @@ function App() {
             <Route path="/perfil">
                 <Layout muestraCabecera={false}>
                     <Perfil />
+                </Layout>
+            </Route>
+
+            <Route path="/seguidos">
+                <Layout>
+                    <Seguidos />
                 </Layout>
             </Route>
 

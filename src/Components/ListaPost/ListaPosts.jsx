@@ -76,7 +76,6 @@ export default function ListaPosts({ arrayPosts = [] }) {
         }
     };
 
-
     return (
         <div className="padrePost">
 
@@ -89,7 +88,7 @@ export default function ListaPosts({ arrayPosts = [] }) {
 
                     <div className="cabeceraPost">
 
-                        <img className="imgAvatar" src={post?.autor?.avatar}></img>
+                        <img className="imgAvatar" src={!post?.autor?.avatar ? '/Images/NoAvatar.gif' : post?.autor?.avatar}></img>
                         <div>
                             <div className="nick">{post?.autor?.nick}</div>
                             <Link to={`/perfil/${post?.autor?.nombreCuenta}`} className="nCuenta">@{post?.autor?.nombreCuenta}</Link>
@@ -106,7 +105,7 @@ export default function ListaPosts({ arrayPosts = [] }) {
                             </span>
                         </Tooltip>
 
-                        <Tooltip  title="Personas que han dado like">
+                        <Tooltip title="Personas que han dado like">
                             <span className="cp" onClick={() => setContenidoModal(post?.usuariosLike)} style={{ marginLeft: "0.5em" }}>{post?.usuariosLike?.length} Likes</span>
                         </Tooltip>
 
@@ -121,7 +120,7 @@ export default function ListaPosts({ arrayPosts = [] }) {
             <Modal
                 title="Personas que han dado like"
                 visible={contenidoModal}
-                onCancel={()=>{setContenidoModal(null)}}
+                onCancel={() => { setContenidoModal(null) }}
                 footer={null}
             >
                 {contenidoModal?.map(usuarioLike => {
@@ -138,7 +137,7 @@ export default function ListaPosts({ arrayPosts = [] }) {
                                 <p>{usuarioLike?.nombreCuenta}</p>
                             }
                         />
-                        <Divider style={{margin: 0}} />
+                        <Divider style={{ margin: 0 }} />
                     </>
                 })}
             </Modal>

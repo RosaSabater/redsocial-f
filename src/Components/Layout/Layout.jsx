@@ -3,7 +3,6 @@ import AccesosDirectos from '../../Components/AccesosDirectos/AccesosDirectos';
 import Postear from '../../Components/Postear/Postear';
 import './Layout.scss'
 import Buscador from '../Buscador/Buscador';
-import Noticias from '../Noticias/Noticias';
 
 const Layout = ({ children, muestraCabecera = true }) => {
 
@@ -18,7 +17,6 @@ const Layout = ({ children, muestraCabecera = true }) => {
                 </div>
 
                 <Buscador />
-                {/* <Noticias /> */}
 
             </div>
         </div>

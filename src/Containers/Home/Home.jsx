@@ -21,9 +21,9 @@ export default function Home() {
             <div className="padreHome">
 
                 <div className="headerHome">
-                    <button onClick={()=> window.open("http://www.lu-rp.es/foro/", "_blank")} className="enlacesBotonHome">Foro</button>
-                    <button onClick={()=> window.open("http://invite.teamspeak.com/ts3.lu-rp.es/", "_blank")} className="enlacesBotonHome">TS3</button>
-                    <button onClick={()=> window.open("https://discord.com/invite/lurpes", "_blank")} className="enlacesBotonHome">Discord</button>
+                    <button onClick={() => window.open("http://www.lu-rp.es/foro/", "_blank")} className="enlacesBotonHome">Foro</button>
+                    <button onClick={() => window.open("http://invite.teamspeak.com/ts3.lu-rp.es/", "_blank")} className="enlacesBotonHome">TS3</button>
+                    <button onClick={() => window.open("https://discord.com/invite/lurpes", "_blank")} className="enlacesBotonHome">Discord</button>
                 </div>
 
                 <div className="luImg"></div>

@@ -1,7 +1,7 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { DELETE_POST, SET_POSTS } from '../../Redux/types';
+import { SET_POSTS } from '../../Redux/types';
 import ListaPosts from '../ListaPost/ListaPosts';
 
 
@@ -10,33 +10,6 @@ export default function Posts() {
     const dispatch = useDispatch();
     const usuario = useSelector(state => state.user)
     const post = useSelector(state => state.post)
-    const [likes, setLikes] = useState(0);
-    const [action, setAction] = useState(null);
-
-    const like = () => {
-        setLikes(1);
-        setAction('liked');
-    };
-
-    const deletePost = async (_id) => {
-        try {
-            const header = {
-                headers: { Authorization: usuario.token }
-            };
-
-            let body = {
-                _id: _id
-            }
-           await axios.post(`${process.env.REACT_APP_APIURL}/borrarPost`, body, header);
-
-            dispatch({
-                type: DELETE_POST, payload: _id
-            })
-        } catch (error) {
-            console.log(error)
-        }
-    };
-
 
     try {
         useEffect(() => {
@@ -67,7 +40,7 @@ export default function Posts() {
 
     return (
         <div className="padrePost">
-            <ListaPosts arrayPosts={post}/>
+            <ListaPosts arrayPosts={post} />
         </div>
     )
 };

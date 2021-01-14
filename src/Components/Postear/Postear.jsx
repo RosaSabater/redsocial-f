@@ -3,7 +3,6 @@ import { Collapse, Input, Button } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import './Postear.scss';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
 import { ADD_POST } from '../../Redux/types';
 
 export default function Postear() {
