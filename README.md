@@ -7,7 +7,7 @@ Es una red social para una comunidad gamer que usa:
 - Backend: 🔸 NodeJS + Express + Mongoose + JWT + Validame(Regex) + BcryptJS + REST Client
 - DB: 🍃 MongoDB 
 
-
+- En el desarrollo usé [este tablón de Trello](https://trello.com/b/WL58ysOA/red-social).
 
 <br>
 
@@ -32,7 +32,14 @@ Es una red social para una comunidad gamer que usa:
 
 # Frontend 🖼
 
--
+- Inicio
+![Inicio](https://gyazo.com/37d38090246192f5072537eba27a8c0c.jpg)
+
+- Registro
+![Registro](https://gyazo.com/f4205ea85eb5c014dce39ab3b7b877a1.jpg)
+
+- Iniciar sesión
+![Iniciar sesión](https://gyazo.com/aa7a58f47c70f0496c23f3417a6cf848.jpg)
 
 <br>
 
@@ -96,7 +103,7 @@ Authorization: {{token}}
 
 <br>
 
-**Posts** 📋
+**POSTS** 📋
 
 <br>
 
@@ -137,7 +144,7 @@ Authorization: {{token}}
 
 <br>
 
-**Follows** 🔭
+**FOLLOWS** 🔭
 
 <br>
 
@@ -181,7 +188,7 @@ Authorization: {{token}}
 
 <br>
 
-**Likes** ✅
+**LIKES** ✅
 
 <br>
 
@@ -205,7 +212,7 @@ Authorization: {{token}}
 
 <br>
 
-**Buscar usuarios** 🔍
+**BUSCAR USUARIOS** 🔍
 
 <br>
 
