@@ -1,13 +1,13 @@
 .padrePost {
     width: 43.5em;
-    // height: 100%;
-    // background-color: rgba(128, 128, 128, 0.473);
+    max-height: 90vh;
     display: flex;
-    // justify-content: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
     flex-direction: column;
     // align-items: center;
     padding: 0.6em;
-
+    margin-top: 3em;
 
 
     .boxPost {
@@ -51,33 +51,4 @@
         //     color: rgb(70, 70, 70);
         // }
     }
-}
-.padrePost::-webkit-scrollbar {
-    width: 8px;     /* Tamaño del scroll en vertical */
-    height: 8px;    /* Tamaño del scroll en horizontal */
-    // display: none;  /* Ocultar scroll */
-}
-/* Ponemos un color de fondo y redondeamos las esquinas del thumb */
-.padrePost::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 4px;
-}
-/* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
-.padrePost::-webkit-scrollbar-thumb:hover {
-    background: #b3b3b3;
-    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
-}
-/* Cambiamos el fondo cuando esté en active */
-.padrePost::-webkit-scrollbar-thumb:active {
-    background-color: #999999;
-}
-/* Ponemos un color de fondo y redondeamos las esquinas del track */
-.padrePost::-webkit-scrollbar-track {
-    background: #e1e1e1;
-    border-radius: 4px;
-}
-/* Cambiamos el fondo cuando esté en active o hover */
-.padrePost::-webkit-scrollbar-track:hover,
-.padrePost::-webkit-scrollbar-track:active {
-  background: #d4d4d4;
 }

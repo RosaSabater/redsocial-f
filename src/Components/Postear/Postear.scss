@@ -1,5 +1,6 @@
 .padrePostear {
     width: 43.5em;
+    position: fixed;
 
     .cabeceraPostear {
         display: flex;
@@ -17,6 +18,7 @@
             border-radius: 1em;
             margin-right: 0.6em;
             border-radius: 5em;
+            margin: 0.8em;
         }
     }
 }

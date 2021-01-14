@@ -181,7 +181,11 @@ const Perfil = () => {
 
             </div>
 
-            <div className="padrePost">
+            <div className="padrePost" style={{
+                    overflowY: "scroll",
+                    overflowX: "hidden",
+                    maxHeight: "70vh"
+            }}>
                 <ListaPosts arrayPosts={misPosts} />
             </div>
 
