@@ -153,7 +153,7 @@ const Perfil = () => {
                     <div>Biografía: {datosUsuario?.biografia}</div>
                     <div className="cabecera">Usuario creado: {new Date(datosUsuario?.fechaCreacion).toLocaleString()}</div>
                 </div>
-                <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-around", textAlign: "center" }}>
+                <div className="boxSeguir" style={{ display: "flex", flexDirection: "column", justifyContent: "space-around", textAlign: "center" }}>
 
                     {/* Si comprobar follow es truthy veo el perfil de otro */}
                     {comprobarFollow &&
