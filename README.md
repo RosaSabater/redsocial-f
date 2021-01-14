@@ -1,70 +1,218 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ¿Qué es? 🌌
 
-## Available Scripts
+Es una red social para una comunidad gamer que usa:
 
-In the project directory, you can run:
+- Frontend: 🧧 ReactJS
+- Backend: 🔸 NodeJS + Express + Mongoose + JWT + Validame(Regex) + BcryptJS + REST Client
+- DB: 🍃 MongoDB 
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<br>
 
-### `npm test`
+# How to run 🚀
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Download [backend repo](https://github.com/RosaSabater/appClinicaDental-b).
+- Download [frontend repo](https://github.com/RosaSabater/appClinicaDental-f).
+- On the backend run:
+	- `nodemon app.js`
+- On the frontend run:
+	- `npm start`
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Deploy ☁
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- El backend está deployado en [Heroku](https://redsocial-b.herokuapp.com).
+- El frontend está deployado en [Netlify](https://leyendasurbanas.netlify.app).
 
-### `npm run eject`
+<br>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Frontend 🖼
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<br>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+# Backend 🔙
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## **Endpoints** 📃
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**USUARIO** 👥
 
-### Code Splitting
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **POST** /registro/
+```json
+{
+    "nick": "Adrian",
+    "nombreCuenta": "soyIcaruk",
+    "email": "adrian@gmail.com",
+    "password": "12345678",
+    "biografia": "Full Stack Developer",
+    "avatar": "https://imgur.com/AxWdS6U.png",
+    "pais": "España",
+    "ciudad": "Valencia"
+}
+```
 
-### Analyzing the Bundle Size
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+- **POST** /login/
+```json
+{
+    "email": "ejemplo@gmail.com",
+    "password": "1234"
+}
+```
+```
+Aquí se crea el token que durará 1 día.
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<br>
 
-### Advanced Configuration
+- **POST** /logout/
+```json
+Authorization: {{token}}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<br>
 
-### Deployment
+- **DELETE** /delete/
+```json
+Authorization: {{token}}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<br>
 
-### `npm run build` fails to minify
+- **POST** /perfil/
+```json
+Authorization: {{token}}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<br>
+
+**Posts** 📋
+
+<br>
+
+- **POST** /post/
+```json
+Authorization: {{token}}
+{
+    "mensaje": "Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+}
+```
+
+<br>
+
+- **POST** /getPosts/
+```json
+Authorization: {{token}}
+{
+    "nombreCuentaAutor": "soyIcaruk"
+}
+```
+
+<br>
+
+- **POST** /getMisPost/
+```json
+Authorization: {{token}}
+```
+
+<br>
+
+- **POST** /borrarPost/
+```json
+Authorization: {{token}}
+{
+    "_id": "5fd506ae3acfb82c14afe270"
+}
+```
+
+<br>
+
+**Follows** 🔭
+
+<br>
+
+- **POST** /darFollow/
+```json
+Authorization: {{token}}
+{
+    "destino": "soyIcaruk"
+}
+```
+
+<br>
+
+- **POST** /quitarFollow/
+```json
+Authorization: {{token}}
+{
+    "destino": "soyIcaruk"
+}
+```
+
+<br>
+
+- **POST** /comprobarFollow/
+```json
+Authorization: {{token}}
+{
+    "destino": "soyIcaruk"
+}
+```
+
+<br>
+
+- **POST** /postSeguidos/
+```json
+Authorization: {{token}}
+{
+    "nombreCuenta": "soyRosa"
+}
+```
+
+<br>
+
+**Likes** ✅
+
+<br>
+
+- **POST** /darLike/
+```json
+Authorization: {{token}}
+{
+    "destino": "5fd9045dc9e4f91ee406f0f2"
+}
+```
+
+<br>
+
+- **POST** /quitarLike/
+```json
+Authorization: {{token}}
+{
+    "destino": "5fd9045dc9e4f91ee406f0f2"
+}
+```
+
+<br>
+
+**Buscar usuarios** 🔍
+
+<br>
+
+- **POST** /buscar/
+```json
+Authorization: {{token}}
+{
+    "busqueda": "ad"
+}
+```
