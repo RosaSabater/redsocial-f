@@ -88,7 +88,7 @@ export default function ListaPosts({ arrayPosts = [] }) {
 
                     <div className="cabeceraPost">
 
-                        <img className="imgAvatar" src={!post?.autor?.avatar ? '/Images/NoAvatar.gif' : post?.autor?.avatar}></img>
+                        <img className="imgAvatar" alt="avatar" src={!post?.autor?.avatar ? '/Images/NoAvatar.gif' : post?.autor?.avatar}></img>
                         <div>
                             <div className="nick">{post?.autor?.nick}</div>
                             <Link to={`/perfil/${post?.autor?.nombreCuenta}`} className="nCuenta">@{post?.autor?.nombreCuenta}</Link>
@@ -127,14 +127,14 @@ export default function ListaPosts({ arrayPosts = [] }) {
                     return <>
                         <Comment
                             actions={null}
-                            author={<a>{usuarioLike?.nick}</a>}
+                            author={<p>{usuarioLike?.nick}</p>}
                             avatar={
                                 <Avatar
                                     src={usuarioLike?.avatar}
                                 />
                             }
                             content={
-                                <p>{usuarioLike?.nombreCuenta}</p>
+                                <Link to={`/perfil/${usuarioLike?.nombreCuenta}`}>{usuarioLike?.nombreCuenta}</Link>
                             }
                         />
                         <Divider style={{ margin: 0 }} />

@@ -1,7 +1,7 @@
-import { EditOutlined, LikeFilled, LikeOutlined } from '@ant-design/icons';
-import { Button, Tooltip } from 'antd';
+import { EditOutlined } from '@ant-design/icons';
+import { Button } from 'antd';
 import axios from 'axios';
-import React, { createElement, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import ListaPosts from '../ListaPost/ListaPosts';
@@ -13,25 +13,8 @@ const Perfil = () => {
     const usuario = useSelector(state => state.user)
     const [datosUsuario, setDatosUsuario] = useState(null);
     const [comprobarFollow, setComprobarFollow] = useState(null);
-    const [likes, setLikes] = useState(0);
-    const [action, setAction] = useState(null);
     const history = useHistory();
     const [localizacion, setLocalizacion] = useState(null);
-
-    const like = () => {
-        setLikes(1);
-        setAction('liked');
-    };
-
-    const actions = [
-        <Tooltip key="comment-basic-like" title="Like">
-            <span onClick={like}>
-                {createElement(action === 'liked' ? LikeFilled : LikeOutlined)}
-                <span className="comment-action">{likes}</span>
-            </span>
-        </Tooltip>,
-        <span key="comment-basic-reply-to"> Responder</span>,
-    ];
 
     let pathname = history.location.pathname.split('/');
     let nombreCuenta = pathname[2];
@@ -47,7 +30,7 @@ const Perfil = () => {
             unlisten()
         }
 
-    }, []);
+    }, [history]);
 
     useEffect(() => {
 
@@ -107,7 +90,7 @@ const Perfil = () => {
             }
         }
         fnc();
-    }, [localizacion]);
+    }, [localizacion, nombreCuenta, usuario]);
 
     const pulsaFollow = async () => {
         const header = {
@@ -184,7 +167,7 @@ const Perfil = () => {
             <div className="padrePost" style={{
                 overflowY: "scroll",
                 overflowX: "hidden",
-                maxHeight: "70vh"
+                maxHeight: "60vh"
             }}>
                 <ListaPosts arrayPosts={misPosts} />
             </div>

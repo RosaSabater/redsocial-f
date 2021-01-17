@@ -90,7 +90,7 @@ export default function AccesosDirectos() {
                     <div style={{
                         display: "flex"
                     }}>
-                        <img src={!usuario?.avatar ? '/Images/NoAvatar.gif' : usuario?.avatar}
+                        <img alt="avatar" src={!usuario?.avatar ? '/Images/NoAvatar.gif' : usuario?.avatar}
                             style={{
                                 width: "4em",
                                 height: "4em",

@@ -33,7 +33,7 @@ export default function Posts() {
                 }
             }
             fnc();
-        }, []);
+        }, [dispatch, usuario?.nombreCuenta, usuario.token]);
 
 
 

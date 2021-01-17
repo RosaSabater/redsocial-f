@@ -29,7 +29,7 @@ export default function Posts() {
                 }
             }
             fnc();
-        }, []);
+        }, [dispatch, usuario.token]);
 
 
 
