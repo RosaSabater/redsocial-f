@@ -13,7 +13,7 @@ const Layout = ({ children, muestraCabecera = true }) => {
 
                 <div className="homepageColumn">
                     {muestraCabecera && <Postear />}
-                    {children}
+                    {children} 
                 </div>
 
                 <Buscador />

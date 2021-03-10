@@ -8,6 +8,7 @@ import ListaPosts from '../ListaPost/ListaPosts';
 export default function Posts() {
 
     const dispatch = useDispatch();
+
     const usuario = useSelector(state => state.user)
     const post = useSelector(state => state.post)
 
@@ -31,12 +32,9 @@ export default function Posts() {
             fnc();
         }, [dispatch, usuario.token]);
 
-
-
     } catch (error) {
         console.log(error)
     }
-
 
     return (
         <div className="padrePost">

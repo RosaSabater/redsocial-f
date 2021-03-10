@@ -56,16 +56,14 @@ const Perfil = () => {
                     } catch (error) {
                         console.log(error);
                     }
+                    
                     // miro el perfil de otro
                 } else {
                     try {
                         const header = {
                             headers: { Authorization: usuario.token }
                         };
-
-                        // let respuesta = await axios.post(`${process.env.REACT_APP_APIURL}/getPosts`, {nombreCuentaAutor: nombreCuenta}, header);
-                        // let respuestaPerfil =  await axios.post(`${process.env.REACT_APP_APIURL}/perfil`, {nombreCuenta}, header);
-
+                        
                         // devuelve el resultado de las tres promesas en paralelo
                         let respuestaPromesas = await Promise.all([
                             axios.post(`${process.env.REACT_APP_APIURL}/getPosts`, { nombreCuentaAutor: nombreCuenta }, header),

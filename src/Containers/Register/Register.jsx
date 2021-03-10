@@ -6,6 +6,7 @@ import './Register.scss';
 export default function Register() {
 
     const history = useHistory();
+    
     const [nick, setNick] = useState("");
     const [nombreCuenta, setNombreCuenta] = useState("");
     const [email, setEmail] = useState("");
